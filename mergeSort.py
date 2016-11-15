@@ -5,11 +5,12 @@ class MergeSort(object):
 
     def sort(self, arr):
         self.mergeSort(arr, 0, len(arr))
-        
+        return arr
+
     def mergeSort(self, arr, start, end):
-        if end - start < 2 :
+        if end - start < 2:
             return
-        
+
         middle = (start + end) / 2
         self.mergeSort(arr, start, middle)
         self.mergeSort(arr, middle, end)
@@ -28,7 +29,5 @@ class MergeSort(object):
                 arr[k] = working[j]
                 j = j + 1
 
-mergeSort = MergeSort()
-arr = [1, 3, 2, 4, 5, 7, 1,2,100,20,19]
-mergeSort.sort(arr)
-print arr
+arr = [1, 3, 2, 4, 5, 7, 1, 2, 100, 20, 19]
+print MergeSort().sort(arr)
